@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="~/Content/css/font-awesome.min.css" />
     <link rel="stylesheet" href="~/Content/css/owl.carousel.css" />
     <link rel="stylesheet" href="~/Content/css/style.css" />
-
+    <link href="~/Content/css/customStyles.css" rel="stylesheet" />
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -40,7 +40,10 @@
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9">
-                    <a href="" class="site-btn header-btn">Login</a>
+                    
+                      
+                      
+                    
                     <nav class="main-menu">
                         <ul>
                             <li><a href="@Url.Action("index","Home")">Home</a></li>
@@ -48,6 +51,8 @@
                             <li><a href="@Url.Action("Courses","Home")">Courses</a></li>
                             @*<li><a href="blog.html">News</a></li>*@
                             <li><a href="@Url.Action("Contact","Home")">Contact</a></li>
+                            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
                         </ul>
                     </nav>
                 </div>
@@ -112,17 +117,17 @@
                 </div>
             </div>
         </div>*@
-        <div class="footer-bottom">
-            <div class="footer-warp">
-                <ul class="footer-menu">
+        <div class="footer-bottom" >
+            <div class="footer-warp" >
+                @*<ul class="footer-menu">
                     <li><a href="#">----</a></li>
                     <li><a href="#">----</a></li>
                     <li><a href="#">----</a></li>
-                </ul>
-                <div class="copyright">
+                </ul>*@
+                <div class="copyright" style="text-align:center;">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    Copyright &copy;@DateTime.Now.Year
+                    All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </div>
             </div>
