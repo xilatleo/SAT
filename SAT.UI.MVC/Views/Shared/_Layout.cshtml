@@ -51,8 +51,17 @@
                             <li><a href="@Url.Action("Courses","Home")">Courses</a></li>
                             @*<li><a href="blog.html">News</a></li>*@
                             <li><a href="@Url.Action("Contact","Home")">Contact</a></li>
-                            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-                            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                            < @Html.Partial("_LoginPartial")
+                            @if (User.IsInRole("Admin"))
+                            {
+                                
+                                    <li id="rAdmin">@Html.ActionLink("Roles Admin", "Index", "RolesAdmin")</li>
+                                    <li id="uAdmin">@Html.ActionLink("Users Admin", "Index", "UsersAdmin")</li>
+                               
+
+
+
+                            }
                         </ul>
                     </nav>
                 </div>

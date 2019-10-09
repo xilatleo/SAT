@@ -177,6 +177,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\ContactViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -228,6 +229,16 @@
     <Content Include="Content\img\page-bg\5.jpg" />
     <Content Include="Content\img\page-top-bg.jpg" />
     <Content Include="Content\img\signup-bg.jpg" />
+    <Content Include="Content\img\Students\Person1.png" />
+    <Content Include="Content\img\Students\Person10.png" />
+    <Content Include="Content\img\Students\Person2.png" />
+    <Content Include="Content\img\Students\Person3.png" />
+    <Content Include="Content\img\Students\Person4.png" />
+    <Content Include="Content\img\Students\Person5.png" />
+    <Content Include="Content\img\Students\Person6.png" />
+    <Content Include="Content\img\Students\Person7.png" />
+    <Content Include="Content\img\Students\Person8.png" />
+    <Content Include="Content\img\Students\Person9.png" />
     <Content Include="Content\img\templogo.png" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\circle-progress.min.js" />
@@ -329,7 +340,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -369,6 +379,8 @@
     <Content Include="Views\RolesAdmin\Delete.cshtml" />
     <Content Include="Views\RolesAdmin\Create.cshtml" />
     <Content Include="Views\Account\DisplayEmail.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\EmailConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
