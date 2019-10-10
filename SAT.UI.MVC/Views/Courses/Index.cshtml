@@ -1,0 +1,80 @@
+﻿@model IEnumerable<SAT.DATA.EF.Courses>
+
+@{
+    ViewBag.Title = "Courses";
+}
+
+
+<section class="hero-section set-bg" data-setbg="../Content/img/bg.jpg" style="max-height:30vh;margin-bottom:30px;">
+    
+</section>
+<div class="containerX">
+    <h2>@ViewBag.Title</h2>
+
+    @if (User.IsInRole("Admin"))
+    {
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    }
+    
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseName)
+            </th>
+            <th style="width:500px;">
+                @Html.DisplayNameFor(model => model.CourseDescription)
+            </th>
+            <th style="width:150px;">
+                @Html.DisplayNameFor(model => model.CreditHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Curriculum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isActive)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreditHours)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Curriculum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isActive)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.CourseId  }, new { @class = "btn btn-primary" })
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CourseId })
+
+                        @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
+                    }
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
