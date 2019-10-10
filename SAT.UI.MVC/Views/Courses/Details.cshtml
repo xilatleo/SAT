@@ -1,0 +1,90 @@
+﻿@model SAT.DATA.EF.Courses
+
+@{
+    ViewBag.Title = "Details";
+}
+<section class="hero-section set-bg" data-setbg="/Content/img/bg.jpg" style="max-height:30vh;margin-bottom:30px;"></section>
+<div class="containerX">
+    <h2>Details</h2>
+
+    <div id="courseContainer">
+        <div id="courseHeader">
+            <h3 id="title-top"> @Html.DisplayFor(model => model.CourseName)</h3>
+        </div>
+
+        <div id="coursetLeft">
+            <div class="row">
+                <p>
+                    <strong>@Html.DisplayNameFor(model => model.CreditHours):  </strong>
+                    @Html.DisplayFor(model => model.CreditHours)
+
+                </p>
+                <p>
+                    <strong> @Html.DisplayNameFor(model => model.Curriculum): </strong>
+                    @Html.DisplayFor(model => model.Curriculum)
+
+                </p>
+                <p>
+
+                    <strong> @Html.DisplayNameFor(model => model.isActive): </strong>
+                    @Html.DisplayFor(model => model.isActive)
+
+                </p>
+            </div>        
+
+
+        </div>
+
+        <div id="courseRight">
+            <div class="row">
+                <p>
+                    <strong>@Html.DisplayNameFor(model => model.CourseDescription): </strong>
+                    @Html.DisplayFor(model => model.CourseDescription)
+
+                </p>
+                <p>
+                    <strong>@Html.DisplayNameFor(model => model.Notes): </strong>
+                    @Html.DisplayFor(model => model.Notes)
+
+                </p>
+                <div class="col-md-6 btn btn-primary backButton"> @Html.ActionLink("Back to List", "Index")</div>
+
+                @if (User.IsInRole("Admin"))
+                {
+                    <div class="col-md-6 text-right btn btn-danger" id="editButton">  @Html.ActionLink("Edit", "Edit", new { id = Model.CourseId })</div>
+                }
+            </div>
+            </div>
+           
+        <div class="clearfix"></div>
+
+        
+         
+
+        
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -32,7 +32,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
-                    <div class="site-logo">
+                    <div class="site-logo" style="width:50%;height:50%;">
                         <img src="~/Content/img/templogo.png" alt="">
                     </div>
                     <div class="nav-switch">
@@ -40,32 +40,40 @@
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9">
-                    
-                      
-                      
-                    
+
+
+
+                 
                     <nav class="main-menu">
+                       
                         <ul>
+                            @Html.Partial("_LoginPartial")
+
                             <li><a href="@Url.Action("index","Home")">Home</a></li>
                             @*<li><a href="#">About us</a></li>*@
-                            <li><a href="@Url.Action("Courses","Home")">Courses</a></li>
+                            <li><a href="@Url.Action("Index","Courses")">Courses</a></li>
                             @*<li><a href="blog.html">News</a></li>*@
                             <li><a href="@Url.Action("Contact","Home")">Contact</a></li>
-                            @Html.Partial("_LoginPartial")
+                            < @Html.Partial("_LoginPartial")
                             @if (User.IsInRole("Admin"))
                             {
+                                
                                     <li id="rAdmin">@Html.ActionLink("Roles Admin", "Index", "RolesAdmin")</li>
                                     <li id="uAdmin">@Html.ActionLink("Users Admin", "Index", "UsersAdmin")</li>
+                               
+
+
+
                             }
                         </ul>
                     </nav>
                 </div>
+                </div>
             </div>
-        </div>
-    </header>
-    <!-- Header section end -->
+        </header>
+        <!-- Header section end -->
 
-    <main>@RenderBody()</main>
+        <main>@RenderBody()</main>
 
     <!-- footer section -->
     <footer class="footer-section spad pb-0">
@@ -139,11 +147,11 @@
     </footer>
     <!-- footer section end -->
     <!--====== Javascripts & Jquery ======-->
-    <script src="~/Content/js/jquery-3.2.1.min.js"></script>
-    <script src="~/Content/js/bootstrap.min.js"></script>
-    <script src="~/Content/js/mixitup.min.js"></script>
-    <script src="~/Content/js/circle-progress.min.js"></script>
-    <script src="~/Content/js/owl.carousel.min.js"></script>
-    <script src="~/Content/js/main.js"></script>
+    <script src="../Content/js/jquery-3.2.1.min.js"></script>
+    <script src="../Content/js/bootstrap.min.js"></script>
+    <script src="../Content/js/mixitup.min.js"></script>
+    <script src="../Content/js/circle-progress.min.js"></script>
+    <script src="../Content/js/owl.carousel.min.js"></script>
+    <script src="../Content/js/main.js"></script>
 </body>
 </html>
