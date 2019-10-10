@@ -17,6 +17,8 @@ namespace SAT.UI.MVC.Controllers
         private SATEntities db = new SATEntities();
 
         // GET: Students
+        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Instructor")]
         public ActionResult Index()
         {
             var students = db.Students.Include(s => s.StudentStatus);
@@ -24,6 +26,8 @@ namespace SAT.UI.MVC.Controllers
         }
 
         // GET: Students/Details/5
+        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Instructor")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,6 +43,8 @@ namespace SAT.UI.MVC.Controllers
         }
 
         // GET: Students/Create
+        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Instructor")]
         public ActionResult Create()
         {
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName");
@@ -64,6 +70,8 @@ namespace SAT.UI.MVC.Controllers
         }
 
         // GET: Students/Edit/5
+        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Instructor")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -97,6 +105,8 @@ namespace SAT.UI.MVC.Controllers
         }
 
         // GET: Students/Delete/5
+        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Instructor")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
