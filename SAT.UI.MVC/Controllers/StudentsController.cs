@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SAT.DATA.EF;
+using PagedList;
+using PagedList.Mvc;
 
 namespace SAT.UI.MVC.Controllers
 {
