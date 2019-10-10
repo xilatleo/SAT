@@ -74,7 +74,17 @@ namespace IdentitySample.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    var user = await UserManager.FindAsync(model.Email, model.Password);
+                    var roles = await UserManager.GetRolesAsync(user.Id);
+                    if (roles.Contains("Admin") || roles.Contains("Instructor"))
+                    {
+                        return RedirectToAction("AdminPanel", "Home",null);
+                    }
+                    else
+                    {
+                        return RedirectToLocal(returnUrl);
+                    }
+
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

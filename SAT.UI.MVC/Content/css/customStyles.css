@@ -161,3 +161,14 @@ textarea {
 .row {
     margin: 20px;
 }
+.adminSetting, .courseSetting {
+    margin: 50px;
+    text-align: center;
+}
+h5 {
+    text-align:center;
+    color: dodgerblue
+}
+.btnPanel {
+    font-size:20px;
+}

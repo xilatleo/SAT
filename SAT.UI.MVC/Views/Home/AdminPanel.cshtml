@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Admin Panel";
+}
+
+<section class="hero-section set-bg" data-setbg="/Content/img/bg.jpg" style="max-height:30vh;margin-bottom:30px;"></section>
+<div class="containerX">
+    <h2>@ViewBag.Title</h2>
+    <div class="adminSetting">
+        <h5>Admin Settings</h5>
+        <span class="btn btn-success text-white btnPanel" style="margin:50px;" id="rAdmin">@Html.ActionLink("Roles Admin", "Index", "RolesAdmin")</span>
+        <span class="btn btn-success text-white btnPanel" id="uAdmin">@Html.ActionLink("Users Admin", "Index", "UsersAdmin")</span>
+    </div>
+
+    <div class="courseSetting">
+        <h5>Courses Settings</h5>
+
+        @if (User.IsInRole("Admin"))
+        {
+            <a class="btn btn-primary btnPanel" style="margin:50px;" href="@Url.Action("Index","Students")">Manage Student</a>
+        }
+        <a class="btn btn-primary btnPanel" style="margin:50px;" href="@Url.Action("Index","ScheduledClasses")">Manage Classes</a>
+        <a class="btn btn-primary btnPanel" style="margin:50px;" href="@Url.Action("Index","Courses")">Manage Courses</a>
+    </div>
+
+</div>
+
+

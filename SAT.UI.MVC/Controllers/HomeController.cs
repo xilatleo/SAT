@@ -67,6 +67,11 @@ namespace SAT.UI.MVC.Controllers
             return View("EmailConfirmation", cvm);
         }
 
+        [Authorize]
+        public ActionResult AdminPanel()
+        {
+            return View();
+        }
 
     }
 }
