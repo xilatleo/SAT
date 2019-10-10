@@ -88,7 +88,7 @@
                 <td>
                     @if (User.IsInRole("Admin"))
                     {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.StudentId })
                     @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
 
                     }
