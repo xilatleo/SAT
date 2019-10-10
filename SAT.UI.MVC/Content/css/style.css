@@ -23,7 +23,7 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0;
+	margin: 11px;
 	font-weight: 600;
 	color: #474747;
 }
@@ -264,11 +264,11 @@ ol {
 	padding-top: 60px;
 }
 
-.site-logo {
-	/*display: inline-block;*/
+/*.site-logo {
+	display: inline-block;
     height: 600px;
     width: 300px;
-}
+}*/
 
 .main-menu ul {
 	list-style: none;
