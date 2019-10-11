@@ -69,7 +69,7 @@ namespace SAT.DATA.EF/*.Metadata*/
     {
         public string QuickPick
         {
-            get { return StartDate + "-" + CourseId + "-" + Location; }
+            get { return StartDate + "-" + Cours.CourseName + "-" + Location; }
         }
     }
     #endregion

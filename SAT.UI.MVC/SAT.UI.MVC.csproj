@@ -175,11 +175,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\ScheduledClassesController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\StudentStatusesController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -238,6 +240,7 @@
     <Content Include="Content\img\page-bg\5.jpg" />
     <Content Include="Content\img\page-top-bg.jpg" />
     <Content Include="Content\img\signup-bg.jpg" />
+    <Content Include="Content\img\Students\noImage.png" />
     <Content Include="Content\img\Students\Person1.png" />
     <Content Include="Content\img\Students\Person10.png" />
     <Content Include="Content\img\Students\Person2.png" />
@@ -407,6 +410,16 @@
     <Content Include="Views\ScheduledClasses\Details.cshtml" />
     <Content Include="Views\ScheduledClasses\Edit.cshtml" />
     <Content Include="Views\ScheduledClasses\Index.cshtml" />
+    <Content Include="Views\Enrollments\Create.cshtml" />
+    <Content Include="Views\Enrollments\Delete.cshtml" />
+    <Content Include="Views\Enrollments\Details.cshtml" />
+    <Content Include="Views\Enrollments\Edit.cshtml" />
+    <Content Include="Views\Enrollments\Index.cshtml" />
+    <Content Include="Views\StudentStatuses\Create.cshtml" />
+    <Content Include="Views\StudentStatuses\Delete.cshtml" />
+    <Content Include="Views\StudentStatuses\Details.cshtml" />
+    <Content Include="Views\StudentStatuses\Edit.cshtml" />
+    <Content Include="Views\StudentStatuses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
