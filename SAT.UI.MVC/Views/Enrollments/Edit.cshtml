@@ -4,15 +4,24 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<!-- Page info -->
+<div class="page-info-section set-bg" data-setbg="/Content/img/page-bg/4.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+            <a href="/">Home</a>
+            <span>Edit Enrollment Information</span>
+        </div>
+    </div>
+</div>
+<!-- Page info end -->
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Enrollments</h4>
+       
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.EnrollmentId)
@@ -41,17 +50,16 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+        <div class="col-md-offset-2 col-md-10">
+
+            <input type="submit" value="Save" class="btn btn-danger orangeButtonStyle" />
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div class="btn btn-primary backButton">
+        @Html.ActionLink("Back to List", "Index")
+    </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

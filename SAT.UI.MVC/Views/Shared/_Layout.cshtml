@@ -58,9 +58,10 @@
                                     <li><a href="@Url.Action("Index","Courses")">Courses</a></li>
                                     <li><a href="@Url.Action("Index","ScheduledClasses")">Classes</a></li>
                                     <li><a href="@Url.Action("Index","Students")">Students</a></li>
+                                    <li><a href="@Url.Action("Index","Enrollments")">Enrollment</a></li>
                                     @if (User.IsInRole("Admin"))
                                     {<li><a href="@Url.Action("Index", "Courses")">Manage Roles</a></li>
-                                    <li><a href="@Url.Action("Index","Courses")">Manage Users</a></li>}
+                                        <li><a href="@Url.Action("Index","Courses")">Manage Users</a></li>}
                                 </div>
                             </div>
                             @*<li><a href="blog.html">News</a></li>*@

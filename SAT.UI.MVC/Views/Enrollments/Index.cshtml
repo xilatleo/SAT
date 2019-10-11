@@ -4,42 +4,67 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<!-- Page info -->
+<div class="page-info-section set-bg" data-setbg="/Content/img/page-bg/4.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+            <a href="/">Home</a>
+            <span>Enrollment Index</span>
+        </div>
+    </div>
+</div>
+<!-- Page info end -->
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.EnrollmentDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ScheduledClass.InstructorName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Student.FirstName)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.EnrollmentDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ScheduledClass.InstructorName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Student.FirstName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EnrollmentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EnrollmentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EnrollmentId })
-        </td>
-    </tr>
+@if (User.IsInRole("Admin"))
+{
+    <p class="btn btn-danger backButtonStyle" style="padding:1%; margin:1%;">
+        @Html.ActionLink("Create New", "Create")
+    </p>
 }
+<table class="myTable display stripe cell-border">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EnrollmentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScheduledClass.InstructorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.FirstName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScheduledClass.InstructorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.FirstName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.EnrollmentId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentId })
+                </td>
+            </tr>
+        </tbody>
+    }
 
 </table>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.myTable').DataTable();
+        });
+    </script>
+}

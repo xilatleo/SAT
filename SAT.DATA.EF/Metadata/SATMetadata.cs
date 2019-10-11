@@ -97,6 +97,27 @@ namespace SAT.DATA.EF/*.Metadata*/
     }
     #endregion
 
+    #region Enrollment
+    public class EnrollmentMetadata
+    {
+        [Required]
+        public int EnrollmentId { get; set; }
+        [Required]
+        public int StudentId { get; set; }
+        [Required]
+        public int ScheduledClassId { get; set; }
+        [Required]
+        [DisplayFormat(DataFormatString = "{0:d}", NullDisplayText = "[N/A]")]
+        [Display(Name ="Enrollment Date")]
+        public System.DateTime EnrollmentDate { get; set; }
+    }
+    [MetadataType(typeof(EnrollmentMetadata))]
+    public partial class Enrollments
+    {
+
+    }
+    #endregion
+
     public class CoursesMetadata
     {
         [Required]

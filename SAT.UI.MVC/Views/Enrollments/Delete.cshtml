@@ -4,13 +4,22 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<!-- Page info -->
+<div class="page-info-section set-bg" data-setbg="/Content/img/page-bg/4.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+            <a href="/">Home</a>
+            <span>Delete Enrollment</span>
+        </div>
+    </div>
+</div>
+<!-- Page info end -->
 
-<h3>Are you sure you want to delete this?</h3>
+<h3 class="mainCenterText">Are you sure you want to delete this @Model.ScheduledClass.Cours.CourseName Enrollment?</h3>
 <div>
-    <h4>Enrollments</h4>
+    
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="mainCenterText">
         <dt>
             @Html.DisplayNameFor(model => model.EnrollmentDate)
         </dt>
@@ -28,21 +37,22 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Student.FirstName)
+            <strong>Student's Name</strong>
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Student.FirstName)
+            @Html.DisplayFor(model => model.Student.FullName)
         </dd>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-danger orangeButtonStyle" /> 
+                <div class="btn btn-primary backButtonStyle">@Html.ActionLink("Back to List", "Index")</div>
+            </div>
+        }
     </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
 </div>
