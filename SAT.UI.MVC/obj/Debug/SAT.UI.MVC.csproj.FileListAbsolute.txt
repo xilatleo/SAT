@@ -218,3 +218,7 @@ C:\Users\Student\Documents\Visual Studio 2017\Projects\11_PMFD\SAT\src\SAT.UI.MV
 C:\Users\Student\Documents\Visual Studio 2017\Projects\11_PMFD\SAT\src\SAT.UI.MVC\bin\PagedList.Mvc.dll
 C:\Users\Student\Documents\Visual Studio 2017\Projects\11_PMFD\SAT\src\SAT.UI.MVC\bin\PagedList.xml
 C:\Users\Student\Documents\Visual Studio 2017\Projects\11_PMFD\SAT\src\SAT.UI.MVC\bin\PagedList.Mvc.xml
+C:\Users\Student\Documents\Visual Studio 2017\Projects\11_ PMFD\SAT\src\SAT.UI.MVC\bin\PagedList.dll
+C:\Users\Student\Documents\Visual Studio 2017\Projects\11_ PMFD\SAT\src\SAT.UI.MVC\bin\PagedList.Mvc.dll
+C:\Users\Student\Documents\Visual Studio 2017\Projects\11_ PMFD\SAT\src\SAT.UI.MVC\bin\PagedList.xml
+C:\Users\Student\Documents\Visual Studio 2017\Projects\11_ PMFD\SAT\src\SAT.UI.MVC\bin\PagedList.Mvc.xml
