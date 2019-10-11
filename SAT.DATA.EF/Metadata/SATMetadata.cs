@@ -49,10 +49,15 @@ namespace SAT.DATA.EF/*.Metadata*/
         [Required]
         public int CourseId { get; set; }
         [Required]
+        [DisplayFormat(DataFormatString = "{0:d}", NullDisplayText = "[N/A]")]
+        [Display(Name ="Start Date")]
         public System.DateTime StartDate { get; set; }
         [Required]
+        [Display(Name ="End Date")]
+        [DisplayFormat(DataFormatString = "{0:d}", NullDisplayText = "[N/A]")]
         public System.DateTime EndDate { get; set; }
         [Required]
+        [Display(Name ="Instructor's Name")]
         public string InstructorName { get; set; }
         [Required]
         public string Location { get; set; }

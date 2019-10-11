@@ -4,63 +4,60 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>ScheduledClasses</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.InstructorName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.InstructorName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cours.CourseName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cours.CourseName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ScheduledClassStatus.SCSName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ScheduledClassStatus.SCSName)
-        </dd>
-
-    </dl>
+<!-- Page info -->
+<div class="page-info-section set-bg" data-setbg="/Content/img/page-bg/4.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+            <a href="/">Home</a>
+            <span>Class Details</span>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ScheduledClassId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<!-- Page info end -->
+
+<div class="containerX">
+
+    <div id="courseContainer">
+
+        <div id="courseHeader">
+            <h3 id="title-top">@Html.DisplayFor(model => model.Cours.CourseName)</h3>
+        </div>
+        <div class="mainCenterText">
+
+
+
+            <p>
+                <strong> @Html.DisplayNameFor(model => model.InstructorName) </strong>: @Html.DisplayFor(model => model.InstructorName)
+            <p>
+                <strong> @Html.DisplayNameFor(model => model.StartDate) </strong>: @Html.DisplayFor(model => model.StartDate) |
+
+                <strong>@Html.DisplayNameFor(model => model.EndDate)</strong> :  @Html.DisplayFor(model => model.EndDate)
+            </p>
+            <p>
+                <strong> @Html.DisplayNameFor(model => model.Location) </strong>: @Html.DisplayFor(model => model.Location)
+            </p>
+
+
+            <p>
+                <strong>  @Html.DisplayNameFor(model => model.ScheduledClassStatus.SCSName)</strong> : @Html.DisplayFor(model => model.ScheduledClassStatus.SCSName)
+            </p>
+            <div class="row" style="place-content: center;">
+
+
+                <div class="btn btn-primary backButton"> @Html.ActionLink("Back to List", "Index")</div>
+
+                <div class="text-right btn btn-danger" id="editButton">
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.ScheduledClassId })
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+

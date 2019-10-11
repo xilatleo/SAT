@@ -52,15 +52,20 @@
 
                             <li><a href="@Url.Action("index","Home")">Home</a></li>
                             @*<li><a href="#">About us</a></li>*@
-                            <li><a href="@Url.Action("Index","Courses")">Courses</a></li>
+                            <div class="dropdown">
+                                <li><a href="@Url.Action("AdminPanel","Home")">Admin Panel</a></li>
+                                <div class="dropdown-content">
+                                    <li><a href="@Url.Action("Index","Courses")">Courses</a></li>
+                                    <li><a href="@Url.Action("Index","ScheduledClasses")">Classes</a></li>
+                                    <li><a href="@Url.Action("Index","Students")">Students</a></li>
+                                    @if (User.IsInRole("Admin"))
+                                    {<li><a href="@Url.Action("Index", "Courses")">Manage Roles</a></li>
+                                    <li><a href="@Url.Action("Index","Courses")">Manage Users</a></li>}
+                                </div>
+                            </div>
                             @*<li><a href="blog.html">News</a></li>*@
                             <li><a href="@Url.Action("Contact","Home")">Contact</a></li>
 
-                            @if (User.IsInRole("Admin"))
-                            {
-                                <li id="rAdmin">@Html.ActionLink("Roles Admin", "Index", "RolesAdmin")</li>
-                                <li id="uAdmin">@Html.ActionLink("Users Admin", "Index", "UsersAdmin")</li>
-                            }
                             @Html.Partial("_LoginPartial")
                         </ul>
                     </nav>

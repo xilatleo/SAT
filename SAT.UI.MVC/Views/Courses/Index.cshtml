@@ -22,10 +22,10 @@
                 <th>
                     @Html.DisplayNameFor(model => model.CourseName)
                 </th>
-                <th style="width:500px;">
+                <th>
                     @Html.DisplayNameFor(model => model.CourseDescription)
                 </th>
-                <th style="width:150px;">
+                <th>
                     @Html.DisplayNameFor(model => model.CreditHours)
                 </th>
                 <th>
@@ -63,17 +63,18 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.isActive)
                     </td>
+                    
                     <td>
-                        @Html.ActionLink("Details", "Details", new { id = item.CourseId }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CourseId })
+                        @if (User.IsInRole("Admin"))
+                        {@Html.ActionLink("Details", "Details", new { id = item.CourseId })}
 
                         @if (User.IsInRole("Admin"))
-                        {
-                            @Html.ActionLink("Edit", "Edit", new { id = item.CourseId })
-
-                            @Html.ActionLink("|Delete", "Delete", new { id = item.CourseId })
-                        }
+                        {@Html.ActionLink("Delete", "Delete", new { id = item.CourseId })}
 
                     </td>
+
+                    
                 </tr>
             </tbody>
         }
