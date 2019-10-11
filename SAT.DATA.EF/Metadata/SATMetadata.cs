@@ -82,6 +82,7 @@ namespace SAT.DATA.EF/*.Metadata*/
         public byte CreditHours { get; set; }
         public string Curriculum { get; set; }
         public string Notes { get; set; }
+        [Display(Name = "Active Course")]
         public bool isActive { get; set; }
     }
     [MetadataType(typeof(CoursesMetadata))]
