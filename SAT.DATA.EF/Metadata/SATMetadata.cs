@@ -7,13 +7,33 @@ using System.Threading.Tasks;
 
 namespace SAT.DATA.EF/*.Metadata*/
 {
+    #region Student Statues
+    public class StudentStatusesMetadata
+    {
+        [Required]
+        public int SSID { get; set; }
+        [Required]
+        [Display(Name ="Name")]
+        public string SSName { get; set; }
+        [Required]
+        [Display(Name ="Description")]
+        public string SSDescription { get; set; }
+    }
+    [MetadataType(typeof(StudentStatusesMetadata))]
+    public partial class StudentStatuses
+    {
+
+    }
+    #endregion
+
     #region Students
     public class StudentMetadata
     {
         [Required]
-
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
         [Required]
         public string Address { get; set; }
@@ -22,11 +42,13 @@ namespace SAT.DATA.EF/*.Metadata*/
         [Required]
         public string State { get; set; }
         [Required]
+        [Display(Name = "Zip Code")]
         public string ZipCode { get; set; }
         [Required]
         public string Phone { get; set; }
         [Required]
         public string Email { get; set; }
+        [Display(Name ="Student Photo")]
         public string PhotoUrl { get; set; }
         [Required]
         public Nullable<int> SSID { get; set; }
@@ -47,6 +69,7 @@ namespace SAT.DATA.EF/*.Metadata*/
     public class ScheduledClassesMetadata
     {
         [Required]
+        [Display(Name = "Course ID")]
         public int CourseId { get; set; }
         [Required]
         [DisplayFormat(DataFormatString = "{0:d}", NullDisplayText = "[N/A]")]

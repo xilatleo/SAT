@@ -5,13 +5,13 @@
 }
 <section class="hero-section set-bg" data-setbg="../Content/img/bg.jpg" style="max-height:30vh;margin-bottom:30px;"></section>
 <div class="containerX">
-    <h2 class="mainCenterText">Student Index</h2>
+    
 
     @if (User.IsInRole("Admin")) { 
-    <p>
+    <p class="btn btn-danger backButtonStyle" style="padding:1%; margin:1%;">
         @Html.ActionLink("Create New", "Create")
     </p>}
-    <table class="myTable">
+    <table class="myTable display stripe cell-border">
         <thead>
             <tr>
                 <th>

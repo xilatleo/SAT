@@ -4,7 +4,16 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<!-- Page info -->
+<div class="page-info-section set-bg" data-setbg="/Content/img/page-bg/4.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+            <a href="/">Home</a>
+            <span>Add New Student Information</span>
+        </div>
+    </div>
+</div>
+<!-- Page info end -->
 
 
 @using (Html.BeginForm("Create", "Students", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -12,10 +21,17 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Student</h4>
+        <h4 class="mainCenterText">Add New Student Information</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhotoUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="file" style="display:inline" name="fupImage" />
+                </div>
+            </div>
             @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
@@ -79,12 +95,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PhotoUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input type="file" style="display:inline" name="fupImage" />
-            </div>
-        </div>
+      
 
         <div class="form-group">
             @Html.LabelFor(model => model.SSID, "SSID", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -104,13 +115,13 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-danger orangeButtonStyle" />
             </div>
         </div>
     </div>
 }
 
-<div>
+<div class="btn btn-primary backButton">
     @Html.ActionLink("Back to List", "Index")
 </div>
 

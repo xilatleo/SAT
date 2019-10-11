@@ -1,4 +1,15 @@
-﻿.copyright{
+﻿
+#navBarStyle {
+    
+    display: inline-block;
+    
+    padding: 4%;
+    margin-right: 2%;
+    text-align: inherit;
+    float: right;
+}
+
+.copyright{
     text-align:center;
     float:none;
 }
@@ -14,8 +25,16 @@
     border: 2px solid #535ba0;
     padding: .8em;
     box-shadow: 1em 1em darkgray;
-}
 
+}
+#studentContainer {
+    height: 490px;
+    width: 90%;
+    margin: auto;
+    border: 2px solid #535ba0;
+    padding: .8em;
+    box-shadow: 1em 1em darkgray;
+}
 #courseHeader {
     text-align: center;
     margin: 10px;
@@ -31,7 +50,24 @@
 }
 
 #courseRight {
-    margin-left: 51%;
+    
+   padding: 5%;
+
+}
+
+#courseRight2 {
+    float: left;
+    padding: 5%;
+}
+#studentDetailButtons {
+    float: left;
+    position: absolute;
+    padding: 5%;
+}
+#studentDetailsWrapper {
+   
+    
+    overflow: hidden;
 }
 
 top-title {
@@ -88,12 +124,14 @@ textarea {
 }
 
 .orangeButtonStyle {
-    width: 7%;
+    
     background-color: coral;
     border: none;
+    color: white!important;
 }
     .orangeButtonStyle:hover {
         background-color: #c3603c;
+        color: white;
     }
 
 #editButton {
@@ -241,3 +279,13 @@ a:hover {
 .contact-form-warp {
     background: coral!important;
 }
+
+.textPush {
+    margin: 1%;
+}
+
+.myTable {
+    border: groove;
+    padding: 1%;
+}
+

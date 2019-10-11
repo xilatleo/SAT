@@ -4,31 +4,42 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>StudentStatuses</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SSName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SSName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SSDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SSDescription)
-        </dd>
-
-    </dl>
+<!-- Page info -->
+<div class="page-info-section set-bg" data-setbg="/Content/img/page-bg/4.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+            <a href="/">Home</a>
+            <span>SS Details</span>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SSID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<!-- Page info end -->
+
+<div class="containerX">
+    <div id="courseContainer">
+        <h4 class="mainCenterText">Student Statuse Details</h4>
+        <hr />
+        <dl class="mainCenterText">
+            <dt>
+                @Html.DisplayNameFor(model => model.SSName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SSName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SSDescription)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SSDescription)
+            </dd>
+            <p>
+                <div class="btn btn-danger orangeButtonStyle"> @Html.ActionLink("Edit", "Edit", new { id = Model.SSID }) </div>
+                <div class="btn btn-primary backButtonStyle">@Html.ActionLink("Back to List", "Index")</div>
+            </p>
+        </dl>
+    </div>
+</div>
+

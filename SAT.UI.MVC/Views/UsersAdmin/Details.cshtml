@@ -15,40 +15,46 @@
 </div>
 <!-- Page info end -->
 
-<div>
+<div class="containerX mainCenterText">
     
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-    </dl>
+    <div id="courseContainer">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+        </dl>
+        <h4>List of roles for this user</h4>
+        @if (ViewBag.RoleNames.Count == 0)
+        {
+            <hr />
+            <p>No roles found for this user.</p>
+        }
+
+        <table class="table">
+
+            @foreach (var item in ViewBag.RoleNames)
+            {
+                <tr>
+                    <td>
+                        @item
+                    </td>
+                </tr>
+            }
+        </table>
+        <div class="mainCenterText">
+
+            <div class="btn btn-primary backButtonStyle"> @Html.ActionLink("Back to List", "Index")</div>
+            <div class="btn btn-danger orangeButtonStyle">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id})
+
+            </div>
+        </div>
+
+    </div>
 </div>
-<h4>List of roles for this user</h4>
-@if (ViewBag.RoleNames.Count == 0)
-{
-    <hr />
-    <p>No roles found for this user.</p>
-}
-
-<table class="table">
-
-    @foreach (var item in ViewBag.RoleNames)
-    {
-        <tr>
-            <td>
-                @item
-            </td>
-        </tr>
-    }
-</table>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
 
 
 
